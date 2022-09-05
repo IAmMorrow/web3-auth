@@ -1,0 +1,38 @@
+{
+  "name": "ledger-auth",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ledgerhq/live-app-sdk": "^0.8.1",
+    "@ledgerhq/react-ui": "^0.8.3",
+    "axios": "^0.27.2",
+    "ethers": "^5.7.0",
+    "iron-session": "^6.2.0",
+    "jose": "^4.9.1",
+    "next": "12.2.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-is": "^18.2.0",
+    "siwe": "^2.0.5",
+    "styled-components": "^5.3.5",
+    "styled-reset": "^4.4.2",
+    "uuid": "^8.3.2",
+    "wagmi": "^0.6.4"
+  },
+  "devDependencies": {
+    "@types/node": "18.7.13",
+    "@types/react": "18.0.17",
+    "@types/react-dom": "18.0.6",
+    "@types/styled-components": "^5.1.26",
+    "@types/uuid": "^8.3.4",
+    "eslint": "8.23.0",
+    "eslint-config-next": "12.2.5",
+    "typescript": "4.8.2"
+  }
+}

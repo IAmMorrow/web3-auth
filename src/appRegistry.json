@@ -1,0 +1,7 @@
+[
+    {
+        "id": "referal",
+        "name": "Referal App",
+        "redirect_uri": "https://referal.apps.ledger.com/auth/ledger_auth"
+    }
+]
