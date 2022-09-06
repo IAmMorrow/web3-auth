@@ -1,7 +1,7 @@
 import { withIronSessionApiRoute } from "iron-session/next";
 import { NextApiRequest, NextApiResponse } from "next";
 import { SiweMessage } from "siwe";
-import { ironOptions } from "../../src/config";
+import { ironOptions, siweOptions } from "../../src/config";
 import { VerifyRequestParams } from "../../src/types/api";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -18,7 +18,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const siweMessage = new SiweMessage(message);
     const result = await siweMessage.verify({
       signature,
-      domain: process.env.VERCEL_URL,
+      domain: siweOptions.allowedDomain,
       time: new Date().toISOString(),
       nonce: req.session.nonce,
     });
