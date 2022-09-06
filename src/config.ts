@@ -1,5 +1,6 @@
 const IRON_SECRET = process.env.IRON_SECRET;
 const JWT_SECRET = process.env.JWT_SECRET;
+const VERCEL_URL = process.env.VERCEL_URL;
 
 if (!IRON_SECRET) {
   throw new Error("No IRON_SECRET field defined in env");
@@ -8,6 +9,8 @@ if (!IRON_SECRET) {
 if (!JWT_SECRET) {
   throw new Error("No JWT_SECRET field defined in env");
 }
+
+const issuer = process.env.VERCEL_URL
 
 export const ironOptions = {
   cookieName: "ledger-auth",

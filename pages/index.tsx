@@ -173,6 +173,8 @@ const Home = ({ connectedAddress, params }: HomeProps) => {
         nonce: state.nonce,
       });
 
+      console.log({ message })
+
       try {
         const signature = await platformSDK.current.signMessage(
           state.account.id,
@@ -183,7 +185,7 @@ const Home = ({ connectedAddress, params }: HomeProps) => {
         const { data: verifyRes } = await axios.post<VerifyRequestResult>("/api/verify", { message, signature });
 
         if (!verifyRes.ok) {
-          throw new Error("Error verifying message");
+          throw new Error(verifyRes.message);
         }
 
         setConnected(verifyRes.address);
