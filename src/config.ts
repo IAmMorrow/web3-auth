@@ -31,6 +31,5 @@ export const ironOptions = {
 export const jwtConfig = {
   issuer: process.env.VERCEL_URL || "dev",
   expirationTime: "30d",
+  secret: JWT_SECRET,
 }
-
-export const jwtSecret = JWT_SECRET

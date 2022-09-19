@@ -1,7 +1,7 @@
 import { withIronSessionApiRoute } from 'iron-session/next'
 import { importPKCS8, SignJWT } from 'jose'
 import { NextApiRequest, NextApiResponse } from 'next'
-import { ironOptions, jwtConfig, jwtSecret } from '../../src/config'
+import { ironOptions, jwtConfig } from '../../src/config'
 import { v5 as uuidv5 } from "uuid";
 import apps from "../../src/appRegistry.json";
 
@@ -37,7 +37,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     uuid: uuidv5(address, UUIDNamespace), // we generate an UUID using the ethereum address
   };
 
-  const pv = await importPKCS8(jwtSecret, "RS256");
+  const pv = await importPKCS8(jwtConfig.secret, "RS256");
 
   const signer = new SignJWT(userData);
   signer.setProtectedHeader({ alg: "RS256" });
